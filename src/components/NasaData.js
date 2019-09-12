@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import NasaCard from "./NasaCard";
+import { Container, Row, Button, Col } from "reactstrap";
 
-const NasaData = () => {
+export const NasaData = () => {
   const [nasaData, setNasaData] = useState([]);
 
   useEffect(() => {
@@ -22,17 +22,35 @@ const NasaData = () => {
   }, []);
 
   return (
-    <div className="NasaInfo">
-      {nasaData.map(data => (
-        <NasaCard
-          title={data.title}
-          image={data.url}
-          explanation={data.explanation}
-          date={data.date}
-          copyright={data.copyright}
-        />
-      ))}
-    </div>
+    <Container>
+      <Button type="primary">Primary</Button>
+      <Button type="success">Success</Button>
+      <Button color="danger">Danger!</Button>
+      <Button type="warning">Warning</Button>
+      <Row>
+        {nasaData.map(data => (
+          <NasaCard
+            title={data.title}
+            image={data.url}
+            date={data.date}
+            explanation={data.explanation}
+            copyright={data.copyright}
+          />
+        ))}
+      </Row>
+    </Container>
+
+    // <div className="NasaInfo">
+    //   {nasaData.map(data => (
+    //     <NasaCard
+    //       title={data.title}
+    //       image={data.url}
+    //       explanation={data.explanation}
+    //       date={data.date}
+    //       copyright={data.copyright}
+    //     />
+    //   ))}
+    // </div>
   );
 };
 
