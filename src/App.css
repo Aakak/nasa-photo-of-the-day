@@ -23,6 +23,8 @@
   color: #61dafb;
 }
 
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -30,4 +32,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.nasa-list{
+  width: 880px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.nasa-list img {
+  width: 100%;
+  height: 500px;
+}
+
+
+.nasa-list h2{
+  text-align: center;
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.nasa-list p{
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
 }

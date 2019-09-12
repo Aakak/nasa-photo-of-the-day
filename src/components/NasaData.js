@@ -9,7 +9,7 @@ const NasaData = () => {
   useEffect(() => {
     axios
       .get(
-        "https://api.nasa.gov/planetary/apod?api_key=PrOZYgQTtNFWEwI0bjb1ZBRvv7FiF1v02tkiU3hY"
+        "https://api.nasa.gov/planetary/apod?api_key=gaZnOlV3l36WMlwd2hPAcydKUZ3aGjaLqsA1m4oe"
       )
       .then(response => {
         const nasaData = response.data;
@@ -19,7 +19,7 @@ const NasaData = () => {
       .catch(error => {
         console.log("Sorry no nasa img", error);
       });
-  });
+  }, []);
 
   return (
     <div className="NasaInfo">
@@ -29,6 +29,7 @@ const NasaData = () => {
           image={data.url}
           explanation={data.explanation}
           date={data.date}
+          copyright={data.copyright}
         />
       ))}
     </div>
