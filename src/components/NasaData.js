@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NasaCard from "./NasaCard";
-import { Container, Row, Button, Col } from "reactstrap";
+
+import {
+  Container,
+  Row,
+  Navbar,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  Button
+} from "reactstrap";
 
 export const NasaData = () => {
   const [nasaData, setNasaData] = useState([]);
@@ -23,10 +32,15 @@ export const NasaData = () => {
 
   return (
     <Container>
-      <Button type="primary">Primary</Button>
-      <Button type="success">Success</Button>
-      <Button color="danger">Danger!</Button>
-      <Button type="warning">Warning</Button>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Nasa Picture Of The Day</NavbarBrand>
+        <Nav className="ml-auto" navbar>
+          <NavItem>
+            <Button>Change Color</Button>
+          </NavItem>
+        </Nav>
+      </Navbar>
+
       <Row>
         {nasaData.map(data => (
           <NasaCard
@@ -39,19 +53,6 @@ export const NasaData = () => {
         ))}
       </Row>
     </Container>
-
-    // <div className="NasaInfo">
-    //   {nasaData.map(data => (
-    //     <NasaCard
-    //       title={data.title}
-    //       image={data.url}
-    //       explanation={data.explanation}
-    //       date={data.date}
-    //       copyright={data.copyright}
-    //     />
-    //   ))}
-    // </div>
   );
 };
-
 export default NasaData;

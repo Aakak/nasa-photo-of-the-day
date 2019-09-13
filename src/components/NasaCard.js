@@ -2,14 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 //Styles
-
 const MainDiv = styled.div`
-  width: 880px;
-  background: #6a5acd;
-  color: white;
-  text-align: center;
+  width: 900px;
   font-family: roboto;
   margin: 0 auto;
+  padding-top: 30px;
 `;
 
 const Image = styled.img`
@@ -17,9 +14,8 @@ const Image = styled.img`
   margin-bottom: 30px;
 `;
 
-const MainH2 = styled.h2`
-  text-align: center;
-  color: red;
+const MainTitile = styled.h2`
+  background-color: lightgrey;
 `;
 
 //NasaCard Props
@@ -27,11 +23,9 @@ const MainH2 = styled.h2`
 const NasaCard = props => {
   return (
     <MainDiv className="nasa-list ">
-      <h2>{props.title}</h2>
+      <h2 className="Main-Title">{props.title}</h2>
       <p>{props.date}</p>
-
       <Image classname="nasa-img" img src={props.image} />
-
       <p>Explanation {props.explanation}</p>
       <p>Copyright {props.copyright}</p>
     </MainDiv>
